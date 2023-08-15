@@ -1,0 +1,63 @@
+-- Tabela add_conteudo
+INSERT INTO add_conteudo (arquivo_conteudo)
+VALUES ('conteudo_blob_1');
+
+-- Tabela categoria
+INSERT INTO categoria (descricao, tipo)
+VALUES ('Categoria A', 'Tipo A');
+
+-- Tabela ativo
+INSERT INTO ativo (valor, descricao, data_lancamento)
+VALUES (1000.00, 'Ativo 1', '2023-08-15');
+
+-- Tabela passivo
+INSERT INTO passivo (valor, descricao, data_lancamento)
+VALUES (500.00, 'Passivo 1', '2023-08-15');
+
+-- Tabela cadastro_prof
+INSERT INTO cadastro_prof (Nome, Sobrenome, Cpf, Rg, Sexo, Dt_nascimento, Pergunta, Resposta)
+VALUES ('Nome Prof', 'Sobrenome Prof', '123.456.789-00', '123456789', 'Masculino', '1990-01-01', 'Pergunta Segurança', 'Resposta Segurança');
+
+-- Tabela login
+INSERT INTO login (email, Senha, nivel, fk_prof_rp)
+VALUES ('professor@example.com', 'senha123', '1', 1);
+
+-- Tabela cad_aluno
+INSERT INTO cad_aluno (nome, sobrenome, sexo, cpf, dt_nasc, nivel_ingles)
+VALUES ('Nome Aluno', 'Sobrenome Aluno', 'Feminino', '987.654.321-00', '2000-05-10', 'Intermediário');
+
+-- Tabela responsavel
+INSERT INTO responsavel (nome, sobrenome, sexo, rg, cpf, dt_nasc)
+VALUES ('Nome Responsável', 'Sobrenome Responsável', 'Masculino', '987654321', '111.222.333-44', '1975-12-25');
+
+-- Tabela endereco
+INSERT INTO endereco (numero, Cidade, cep, uf, Rua, bairro, complemento, fk_prof_rp, fk_alun_ra, fk_cod_resp)
+VALUES ('123', 'Cidade A', '12345-678', 'UF', 'Rua Principal', 'Bairro Central', 'Complemento', 1, 1, 1);
+
+-- Tabela telefone
+INSERT INTO telefone (tel_fixo, tel_celular, tel_emergencial)
+VALUES ('(11) 1234-5678', '(11) 98765-4321', '(11) 99999-8888');
+
+-- Tabela div_turma
+INSERT INTO div_turma (nome_turma, dia_semana, horario_dia, modalidade, fk_prof_rp, fk_aluno_ra)
+VALUES ('Turma A', 'Segunda-feira', '09:00:00', 'Modalidade X', 1, 1);
+
+-- Tabela chamada
+INSERT INTO chamada (data_chamada, presenca, status_felicidade, relatorio)
+VALUES ('2023-08-15', 'Sim', 'Bom', 'Relatório da chamada');
+
+-- Tabela categ_ativo
+INSERT INTO categ_ativo (fk_id_cat, fk_id_ativo)
+VALUES (1, 1);
+
+-- Tabela categ_passivo
+INSERT INTO categ_passivo (fk_id_cat, fk_id_passivo)
+VALUES (1, 1);
+
+-- Tabela prof_conteudo
+INSERT INTO prof_conteudo (fk_prof_rp, fk_cod_conteudo)
+VALUES (1, 1);
+
+-- Tabela pai_filho
+INSERT INTO pai_filho (fk_aluno_ra, fk_cod_resp)
+VALUES (1, 1);
