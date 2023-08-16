@@ -14,36 +14,59 @@ import javax.swing.JOptionPane;
  *
  * @author Edson
  */
-public class UtilDAO {
-     public static Connection conectar() {
-	 Connection con = null;
-	try{
+
+
+//Essa classe tenta estabelecer a conexao com o servidor sql
+
+public class UtilDAO
+{
+
+     public static Connection conectar()
+     {
+	    Connection con = null;
+
+	    try{
+
             String host = "";
             int porta = 0;
             String nome = "";
             String usuario = "";
             String senha = "";
+            
             try {
-        Properties p = new Properties();
-            FileInputStream fis = new FileInputStream("propriedades/config.properties");
-            p.load(fis);
-            host = p.getProperty("bd.config.host");
-            usuario = p.getProperty("bd.config.user");
-            senha = p.getProperty("bd.config.senha");
-            porta = Integer.parseInt(p.getProperty("bd.config.porta"));
-            nome = p.getProperty("bd.config.nome");
-            
-        } catch (FileNotFoundException ex) {
-            System.out.println("Arquivo não encontrado na propriedades/config.properties");
-        } catch (IOException ex) {
-            System.out.println("falha na leitura do arquivo propriedades/config.properties ");
+                Properties p = new Properties();
+                FileInputStream fis = new FileInputStream("propriedades/config.properties");
+                p.load(fis);
+                host = p.getProperty("bd.config.host");
+                usuario = p.getProperty("bd.config.user");
+                senha = p.getProperty("bd.config.senha");
+                porta = Integer.parseInt(p.getProperty("bd.config.porta"));
+                nome = p.getProperty("bd.config.nome");
+                }
+
+                catch (FileNotFoundException ex)
+                {
+                    System.out.println("Arquivo não encontrado na propriedades/config.properties");
+
+                }
+                
+                catch (IOException ex)
+                {
+                    System.out.println("falha na leitura do arquivo propriedades/config.properties ");
+                }
+                
+                //con = DriverManager.getConnection("jdbc:mysql://"+ host +":"+ porta +"/"+ nome, usuario, senha);
+                con = DriverManager.getConnection("jdbc:mysql://" + host + ":" + porta + "/" + nome + "?characterEncoding=utf8", usuario, senha);
+                //con = DriverManager.getConnection("jdbc:mysql://"+ "localhost" +":"+ "3306" +"/"+ "makeasy", "root", "");
+
+                
         }
-            
-            con = DriverManager.getConnection("jdbc:mysql://"+ host +":"+ porta +"/"+ nome, usuario, senha);
-        }catch(SQLException ex){
-            JOptionPane.showMessageDialog(null,"Não conectou com o banco de dados");
+        catch(SQLException ex)
+        {
+            JOptionPane.showMessageDialog(null,"Não conectou com o banco de dados. V2");
             ex.printStackTrace();
         }
+
         return con;
     }
      

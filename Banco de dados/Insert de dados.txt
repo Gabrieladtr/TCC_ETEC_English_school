@@ -18,9 +18,10 @@ VALUES (500.00, 'Passivo 1', '2023-08-15');
 INSERT INTO cadastro_prof (Nome, Sobrenome, Cpf, Rg, Sexo, Dt_nascimento, Pergunta, Resposta)
 VALUES ('Nome Prof', 'Sobrenome Prof', '123.456.789-00', '123456789', 'Masculino', '1990-01-01', 'Pergunta Segurança', 'Resposta Segurança');
 
--- Tabela login
+-- Tabela login: usuario administrador e usuario normal
 INSERT INTO login (email, Senha, nivel, fk_prof_rp)
-VALUES ('professor@example.com', 'senha123', '1', 1);
+VALUES ('adm@example.com', 'senha123', 'ADM', 1);
+VALUES ('professor@example.com', 'senha123', 'PRO', 2);
 
 -- Tabela cad_aluno
 INSERT INTO cad_aluno (nome, sobrenome, sexo, cpf, dt_nasc, nivel_ingles)

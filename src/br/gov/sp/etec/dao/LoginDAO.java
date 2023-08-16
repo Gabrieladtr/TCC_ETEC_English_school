@@ -25,6 +25,7 @@ public class LoginDAO {
     public Login Altetica (Login l){
         Connection con = null;
         Professor p= new Professor();
+        
         try{
         PreparedStatement ps = null;
         String sql = "select * from login where login.email = ? and login.senha = ?;";

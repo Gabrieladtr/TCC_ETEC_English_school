@@ -18,6 +18,9 @@ import javax.swing.JOptionPane;
  *
  * @author Gabriel Rocha
  */
+
+ //Essa classe testa a conexao com o banco de dados
+ 
 public class UtilDAO {
     
      public static Connection conexao() {
