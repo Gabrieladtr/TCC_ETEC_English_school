@@ -4,6 +4,20 @@ Instruções para funcionamento do código fonte do sistema:
 
 ------------------------------------
 
+Links dos programas necessários para funcionamento do sistema:
+
+Wamp:
+https://sourceforge.net/projects/wampserver/files/
+
+Java (JRE):
+https://www.java.com/pt-BR/download/ie_manual.jsp?locale=pt_BR
+
+MySQL Workbench: (gerenciador de banco de dados)
+https://dev.mysql.com/downloads/workbench/
+
+
+------------------------------------
+
 1º - Criando e inserindo informações no banco de dados:
 
 ->Instale o Wamp. Esse programa possui um sistema onde cria um servidor, esse servidor será usado para conectar o programa com o banco de dados.
